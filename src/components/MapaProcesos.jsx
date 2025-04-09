@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../styles/Prueba.css'
+import '../styles/mapaProcesos.css'
 
 const MapaProcesos = () => {
     const navigate = useNavigate();
