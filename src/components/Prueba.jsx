@@ -10,7 +10,7 @@ const MapaProcesos = () => {
             <nav className="navbar navbar-expand-lg encabezado sticky-top shadow" style={{ minHeight: "70px", backgroundColor: "white" }}>
                 <div className="container-fluid d-flex justify-content-between align-items-center">
                     <a className="navbar-brand" href="#">
-                        Branos
+                        BRANOS
                     </a>
                     <button className="btn btn-outline-danger" onClick={() => {
                         // Aquí puedes poner tu lógica para cerrar sesión
@@ -24,7 +24,7 @@ const MapaProcesos = () => {
             </nav>
 
 
-            <div className="container my-4">
+            <div className="container my-4 shadow">
                 <h2 className="header-mapa">
                     Mapa de Procesos
                 </h2>

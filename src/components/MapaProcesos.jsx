@@ -1,97 +1,123 @@
-const MapaProcesos = () => {
-    return (
-        <div className="container my-5 p-4 border rounded bg-light">
-            <h2 className="text-center fw-bold mb-4">MAPA DE PROCESOS</h2>
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import '../styles/Prueba.css'
 
-            {/* PROCESOS ESTRATÉGICOS */}
-            <div className="text-center fw-semibold mb-3"><h5>PROCESOS ESTRATÉGICOS</h5></div>
-            <div className="row justify-content-center mb-4">
-                <div className="col-md-3 mb-2">
-                    <div className="card text-center w-100 h-100">
-                        <div className="card-body d-flex flex-column align-items-center p-3">
-                            <i className="bi bi-briefcase-fill fs-3 mb-2"></i>
-                            <span>Gestión Comercial</span>
-                        </div>
-                    </div>
+const MapaProcesos = () => {
+    const navigate = useNavigate();
+
+    return (
+        <>
+            <nav className="navbar navbar-expand-lg encabezado sticky-top shadow" style={{ minHeight: "70px", backgroundColor: "white" }}>
+                <div className="container-fluid d-flex justify-content-between align-items-center">
+                    <a className="navbar-brand" href="#">
+                        BRANOS
+                    </a>
+                    <button className="btn btn-outline-danger" onClick={() => {
+                        // Aquí puedes poner tu lógica para cerrar sesión
+                        localStorage.removeItem('user'); // ejemplo
+                        navigate('/');
+                    }}>
+                        <i className="bi bi-box-arrow-right me-1"></i> 
+                        Cerrar sesión
+                    </button>
                 </div>
-                <div className="col-md-3 mb-2">
-                    <div className="card text-center w-100 h-100">
-                        <div className="card-body d-flex flex-column align-items-center p-3">
-                            <i className="bi bi-bar-chart-line-fill fs-3 mb-2"></i>
-                            <span>Gestión Gerencial</span>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-md-3 mb-2 d-flex">
-                    <a href="/proceso" className="text-decoration-none w-100">
-                        <div className="card text-center w-100 h-100">
-                            <div className="card-body d-flex flex-column align-items-center justify-content-center p-3">
-                                <i className="bi bi-gear-fill fs-3 mb-2"></i>
-                                <span className="text-dark">Sistema e integración y de gestión</span>
+            </nav>
+
+
+            <div className="container my-4 shadow">
+                <h2 className="header-mapa">
+                    Mapa de Procesos
+                </h2>
+
+                <div className="mt-4">
+                    <h5 className="section-title">Procesos Estratégicos</h5>
+                    <div className="row justify-content-center g-3">
+                        <div className="col-10 col-sm-6 col-md-4 col-lg-3">
+                            <div className="card h-100 text-center shadow card-hover" onClick={() => navigate('/gestion-comercial')} role="button">
+                                <div className="card-body d-flex flex-column justify-content-center align-items-center">
+                                    <i className="bi bi-bag-check card-icon"></i>
+                                    <p className="mt-2 mb-0">Gestión Comercial</p>
+                                </div>
                             </div>
                         </div>
-                    </a>
-                </div>
-            </div>
 
-            {/* PROCESOS MISIONALES */}
-            <div className="text-center fw-semibold mb-3">PROCESOS MISIONALES</div>
-            <div className="row justify-content-center mb-4">
-                <div className="col-md-4">
-                    <div className="card text-center">
-                        <div className="card-body d-flex flex-column align-items-center p-3">
-                            <i className="bi bi-truck fs-3 mb-2"></i>
-                            <span>Operaciones</span>
+                        <div className="col-10 col-sm-6 col-md-4 col-lg-3">
+                            <div className="card h-100 text-center shadow card-hover" onClick={() => navigate('/gestion-gerencial')} role="button">
+                                <div className="card-body d-flex flex-column justify-content-center align-items-center">
+                                    <i className="bi bi-graph-up-arrow card-icon"></i>
+                                    <p className="mt-2 mb-0">Gestión Gerencial</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
 
-            {/* PROCESOS DE APOYO */}
-            <div className="text-center fw-semibold mb-3">PROCESOS DE APOYO</div>
-            <div className="row justify-content-center">
-                <div className="col-md-4 mb-2">
-                    <div className="card text-center">
-                        <div className="card-body d-flex flex-column align-items-center p-3">
-                            <i className="bi bi-shield-plus fs-3 mb-2"></i>
-                            <span>Seguridad y salud en el trabajo</span>
+                        <div className="col-10 col-sm-6 col-md-4 col-lg-3">
+                            <div className="card h-100 text-center shadow card-hover" onClick={() => navigate('/sistema-integrados')} role="button">
+                                <div className="card-body d-flex flex-column justify-content-center align-items-center">
+                                    <i className="bi bi-gear-wide-connected card-icon"></i>
+                                    <p className="mt-2 mb-0">Sistemas Integrados de Gestión</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div className="col-md-4 mb-2">
-                    <div className="card text-center">
-                        <div className="card-body d-flex flex-column align-items-center p-3">
-                            <i className="bi bi-cash-stack fs-3 mb-2"></i>
-                            <span>Contabilidad Financiera</span>
+
+                <div className="mt-4">
+                    <h5 className="section-title">Procesos Misionales</h5>
+                    <div className="row justify-content-center g-3">
+                        <div className="col-10 col-sm-6 col-md-4 col-lg-3">
+                            <div className="card h-100 text-center shadow card-hover" onClick={() => navigate('/operaciones')} role="button">
+                                <div className="card-body d-flex flex-column justify-content-center align-items-center">
+                                    <i className="bi bi-boxes card-icon"></i>
+                                    <p className="mt-2 mb-0">Operaciones</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div className="col-md-4 mb-2">
-                    <div className="card text-center">
-                        <div className="card-body d-flex flex-column align-items-center p-3">
-                            <i className="bi bi-people-fill fs-3 mb-2"></i>
-                            <span>Gestión humana</span>
+
+                <div className="mt-4">
+                    <h5 className="section-title">Procesos de Apoyo</h5>
+                    <div className="row justify-content-center g-3">
+                        <div className="col-10 col-sm-6 col-md-4 col-lg-3">
+                            <div className="card h-100 text-center shadow card-hover" onClick={() => navigate('/seguridad-salud')} role="button">
+                                <div className="card-body d-flex flex-column justify-content-center align-items-center">
+                                    <i className="bi bi-shield-plus card-icon"></i>
+                                    <p className="mt-2 mb-0">Seguridad y salud en el trabajo</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div className="col-md-4 mb-2">
-                    <div className="card text-center">
-                        <div className="card-body d-flex flex-column align-items-center p-3">
-                            <i className="bi bi-basket fs-3 mb-2"></i>
-                            <span>Compras</span>
+
+                        <div className="col-10 col-sm-6 col-md-4 col-lg-3">
+                            <div className="card h-100 text-center shadow card-hover" onClick={() => navigate('/contabilidad')} role="button">
+                                <div className="card-body d-flex flex-column justify-content-center align-items-center">
+                                    <i className="bi bi-calculator card-icon"></i>
+                                    <p className="mt-2 mb-0">Contabilidad y financiera</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div className="col-md-4 mb-2">
-                    <div className="card text-center">
-                        <div className="card-body d-flex flex-column align-items-center p-3">
-                            <i className="bi bi-box-arrow-right fs-3 mb-2"></i>
-                            <span>Cerrar Sesión</span>
+
+                        <div className="col-10 col-sm-6 col-md-4 col-lg-3">
+                            <div className="card h-100 text-center shadow card-hover" onClick={() => navigate('/gestion-humana')} role="button">
+                                <div className="card-body d-flex flex-column justify-content-center align-items-center">
+                                    <i className="bi bi-person-workspace card-icon"></i>
+                                    <p className="mt-2 mb-0">Gestión humana</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="col-10 col-sm-6 col-md-4 col-lg-3">
+                            <div className="card h-100 text-center shadow card-hover" onClick={() => navigate('/compras')} role="button">
+                                <div className="card-body d-flex flex-column justify-content-center align-items-center">
+                                    <i className="bi bi-cart-check card-icon"></i>
+                                    <p className="mt-2 mb-0">Compras</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </>
+
     );
 };
 
