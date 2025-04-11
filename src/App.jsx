@@ -4,6 +4,7 @@ import MapaProcesos from './components/MapaProcesos';
 import DesarrolloOrg from './components/DesarrolloOrg';
 import Navbar from './components/Navbar';
 import './styles/global.css'
+import GestionDocumental from './components/GestionDocumental';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<MapaProcesos />} />
           <Route path="desarrollo-organizacional" element={<DesarrolloOrg />} />
+          <Route path="gestion-documental" element={<GestionDocumental/>} />
         </Routes>
       </div>
     </BrowserRouter>

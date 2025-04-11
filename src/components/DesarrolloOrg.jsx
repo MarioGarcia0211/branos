@@ -32,7 +32,7 @@ const DesarrolloOrg = () => {
                     </div>
 
                     <div className="col-10 col-sm-6 col-md-4 col-lg-4">
-                        <div className="card h-100 text-center shadow card-hover" role="button">
+                        <div className="card h-100 text-center shadow card-hover" onClick={() => navigate('/gestion-documental')} role="button">
                             <div className="card-body d-flex flex-column justify-content-center align-items-center">
                                 <i className="bi bi-gear-wide-connected card-icon"></i>
                                 <p className="mt-2 mb-0">Gestión documental</p>
